@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
+
+    <!--Beans-->
+    <bean id="mpesaService" class="com.omexit.paymentbridge.components.mpesa.MpesaService"/>
+
+    <!-- Transaction channels. Use by the outgoing payment router and service activators-->
+    <int:channel id="mpesab2c"/>
+
+    <!--MPesa Service Activators-->
+    <int:service-activator id="handleMPesaOutgoingPaymentActivator" ref="mpesaService"
+                           method="processOutgoingPayment"
+                           input-channel="mpesab2c"/>
+</beans>
