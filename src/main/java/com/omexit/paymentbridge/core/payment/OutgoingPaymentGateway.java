@@ -9,5 +9,5 @@ import java.util.concurrent.Future;
  */
 public interface OutgoingPaymentGateway {
 
-    public Future<Message<Payment>> print(Message<Payment> message);
+	public Future<Message<Payment>> print(Message<Payment> message);
 }

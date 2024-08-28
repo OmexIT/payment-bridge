@@ -12,16 +12,15 @@ import java.util.List;
  */
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
-    Payment findById(Long paymentId);
 
-    @Query("SELECT p from outgoing p where p.actualDisbursementDate <= ?1 and p.paymentStatus = ?2")
-    List<Payment> findTransactionsToProcess(Date actualDisbursementDate, PaymentStatus paymentStatus);
+	@Query("SELECT p from outgoing p where p.actualDisbursementDate <= ?1 and p.paymentStatus = ?2")
+	List<Payment> findTransactionsToProcess(Date actualDisbursementDate, PaymentStatus paymentStatus);
 
-    List<Payment> findByDateCreated(Date dateCreated);
+	List<Payment> findByDateCreated(Date dateCreated);
 
-    List<Payment> findByLastModified(Date lastModified);
+	List<Payment> findByLastModified(Date lastModified);
 
-    List<Payment> findByTransactionAmount(Double lastModified);
+	List<Payment> findByTransactionAmount(Double lastModified);
 
-    Payment findByEntityIdAndTenantIdAndClientIdAndEntity(Long entityId, String tenantId, Long clientId, String entity);
+	Payment findByEntityIdAndTenantIdAndClientIdAndEntity(Long entityId, String tenantId, Long clientId, String entity);
 }
