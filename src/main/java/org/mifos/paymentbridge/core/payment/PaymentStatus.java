@@ -1,8 +1,8 @@
 package org.mifos.paymentbridge.core.payment;
 
-/**
- * Created by Antony on 2/10/2016.
- */
+import lombok.Getter;
+
+@Getter
 public enum PaymentStatus {
 	INVALID_ID(0, "INVALID_ID"), PAYMENT_COMPLETE(1, "PAYMENT_COMPLETE"), PAYMENT_PENDING(2,
 			"PAYMENT_PENDING"), PAYMENT_ON_HOLD(3, "PAYMENT_ON_HOLD"), PAYMENT_CANCELLED(4,
@@ -46,15 +46,7 @@ public enum PaymentStatus {
 		return enumeration;
 	}
 
-	public Integer getValue() {
-		return this.value;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public boolean hasTypeOf(final PaymentStatus type) {
+    public boolean hasTypeOf(final PaymentStatus type) {
 		return this.value.equals(type.getValue());
 	}
 
