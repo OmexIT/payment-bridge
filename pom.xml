@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.omexit</groupId>
-	<artifactId>payment-bridge</artifactId>
+	<artifactId>mifos-payment-bridge</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>payment-bridge</name>
+	<name>mifos-payment-bridge</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
